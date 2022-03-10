@@ -5,11 +5,12 @@ from newton import Newton
 from false_point import Sec 
 
 def capture_basic_data():
-    """ 
-    Description:
+    """Description:
         capture basic data(function, interval, precision).
     params:
-        None
+        function(str): Math function to be analyzed
+        interval(tuple):interval of values to be used
+        precision(float): precision to be used as stoping paramiter  
     Retruns:
         tuple[function, interval, precision]
     """
@@ -29,20 +30,24 @@ def capture_basic_data():
          
 
 def fixed_data():
+    """Description:
+            Captures specific fixed point method variables
+        params:
+            None
+        returns:
+            the beta function "f(x) => x inputted by the user"
     """
-    Description:
-    
-        Captures specific fixed point method variables
-    """
-    print("For the bisection method enter:")
-    return input( "The beta function: ")
+    return input( "For the bisection method enter:\nThe beta function: ")
 def newton_data():
     """
     Description:
-        Captures specific newton method variables
+        Captures specific newton method variables.
+    params:
+        None:
+    returns:
+        the firs derivate function f'(x) inputted by the user
     """
-    print("For the newton method enter:")
-    return input("The derivate function f'(x): ")
+    return input("For the newton method enter:\nThe derivate function f'(x): ")
 
 methods = """
 1- Newton-Rphson

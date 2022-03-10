@@ -1,5 +1,13 @@
 from file import File
 class Sec:
+    """DESCRIPTION
+            class contaning newton-Raphson method
+            the method initial seed is the first value of the interval
+        params:
+        function(str): function to be analyzed
+        interval(tuple [a,b]): interval to be used for the method
+        precision(float): precision to be used for the method
+    """
     def __init__(self, function, interval, precision):
         self.function = function
         self.interval = interval

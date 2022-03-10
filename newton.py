@@ -1,8 +1,7 @@
 from file import File
 class Newton:
     def __init__(self, function, interval, derivative_func, precision):
-        """
-        DESCRIPTION
+        """DESCRIPTION
             class contaning newton-Raphson method
             the method initial seed is the first value of the interval
         params:

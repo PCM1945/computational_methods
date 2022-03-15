@@ -1,8 +1,9 @@
+from sympy import diff
 from file import File
 
 
 class Newton:
-    def __init__(self, function, interval, derivative_func, precision):
+    def __init__(self, function, interval, precision):
         """DESCRIPTION
             class contaning newton-Raphson method
             the method initial seed is the first value of the interval
@@ -14,15 +15,15 @@ class Newton:
         """
         self.function = function
         self.interval = interval
-        self.derivative_func = derivative_func
         self.precision = float(precision)
 
     def dx(self, x):
         exec("from math import *")
-        # import log module to work with eval function
         exec("from math import log as ln")
+        # import log module to work with eval function
         # translates a valid expession into python code
-        return float(eval(self.derivative_func))
+        return float(eval(str(diff(self.function))))
+
 
     def fx(self, x):
         exec("from math import *")

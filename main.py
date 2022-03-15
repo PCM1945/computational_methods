@@ -41,19 +41,6 @@ def fixed_data():
     """
     return input("For the bisection method enter:\nThe beta function: ")
 
-
-def newton_data():
-    """
-    Description:
-        Captures specific newton method variables.
-    params:
-        None:
-    returns:
-        the firs derivate function f'(x) inputted by the user
-    """
-    return input("For the newton method enter:\nThe derivate function f'(x): ")
-
-
 methods = """
 1- Newton-Rphson
 2- Fixed point
@@ -75,8 +62,7 @@ def main():
             match input():
                 case('1'):
                     func, interval, prec = capture_basic_data()
-                    dev_x = newton_data()
-                    newton = Newton(func, interval, dev_x, prec)
+                    newton = Newton(func, interval, prec)
                     print("Newton: ")
                     newton.newton()
                 case('2'):

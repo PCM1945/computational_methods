@@ -1,5 +1,6 @@
 #folders
 .\venv
+.\source\venv
 \__pycache__
 #extensions
 *.csv

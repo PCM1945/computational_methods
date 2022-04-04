@@ -1,4 +1,3 @@
-import re
 from bisection import Bissection
 from fixed_point import Point
 from newton import Newton
@@ -58,30 +57,33 @@ def main():
             print("select what method you would like to process: ", end='')
 
             print(methods)
-
-            match input():
-                case('1'):
-                    func, interval, prec = capture_basic_data()
-                    newton = Newton(func, interval, prec)
-                    print("Newton: ")
-                    newton.newton()
-                case('2'):
-                    func, interval, prec = capture_basic_data()
-                    beta = fixed_data()
-                    fixed = Point(func, interval, beta, prec)
-                    print("fixed point: ")
-                    fixed.fixed_point()
-                case('3'):
-                    func, interval, prec = capture_basic_data()
-                    print("bisection: ")
-                    bi = Bissection(func, interval, prec)
-                    bi.bisect()
-                case('4'):
-                    func, interval, prec = capture_basic_data()
-                    f_point = Sec(func, interval, prec)
-                    f_point.point()
-                case _:
-                    print("this option does not exists")
+            ens = input()
+            if ens == '1':
+                func, interval, prec = capture_basic_data()
+                newton = Newton(func, interval, prec)
+                print("Newton: ")
+                newton.newton()
+                ens = 0
+            if ens == '2':
+                func, interval, prec = capture_basic_data()
+                beta = fixed_data()
+                fixed = Point(func, interval, beta, prec)
+                print("fixed point: ")
+                fixed.fixed_point()
+                ens = 0
+            if ens == '3':
+                func, interval, prec = capture_basic_data()
+                print("bisection: ")
+                bi = Bissection(func, interval, prec)
+                bi.bisect()
+                ens = 0
+            if ens =='4':
+                func, interval, prec = capture_basic_data()
+                f_point = Sec(func, interval, prec)
+                f_point.point()
+                ens = 0
+            elif ens != 0:
+                print("this option does not exists")
             print()
             print("Press Ctrl+C to exit, else try other function")
         except KeyboardInterrupt:
